@@ -2186,7 +2186,12 @@ ul {
         align-items: center;
         height: 100%;
         /* Full height of header if needed, or just auto */
+        /* Full height of header if needed, or just auto */
         line-height: 1;
+        /* Full height of header if needed, or just auto */
+        line-height: 1;
+        margin-top: 0;
+        /* Reset margin, rely on flex center */
     }
 
     /* Ensure Header Inner stays centered */
@@ -2195,10 +2200,16 @@ ul {
     }
 
     /* 2. Hero Video: 16:9 Ratio & Compact Text */
+    /* 2. Hero Video: 16:9 Ratio & Compact Text */
     .video-hero-container {
-        height: auto;
-        aspect-ratio: 16/9;
-        min-height: auto;
+        height: 280px !important;
+        /* Fixed Height */
+        aspect-ratio: auto;
+        min-height: 280px;
+    }
+
+    .video-hero-container video {
+        object-fit: cover;
     }
 
     .hero-content-v2 h1 {
@@ -2259,6 +2270,13 @@ ul {
         /* Reduced Portfolio Image Height */
     }
 
+    /* Reduce Portfolio Section Padding for Compact Look */
+    .section-v2.portfolio-section {
+        padding-top: 10px !important;
+        /* Tighter top spacing */
+        padding-bottom: 30px !important;
+    }
+
     /* 4. Technical Certificate: Simplify & Compact */
     .cert-scroll-container {
         display: block;
@@ -2270,14 +2288,17 @@ ul {
     }
 
     /* Reduce Section Padding for Compact Look */
-    .section-v2.cert-section {
-        padding: 40px 0 !important;
-        /* Drastically reduced vertical padding */
+    /* Reduce Section Padding for Compact Look */
+    /* Reduce Section Padding for Compact Look */
+    .section-v2.certificate-section {
+        padding: 30px 0 !important;
+        /* Reduced vertical height */
     }
 
-    .cert-section .section-title-v2 {
-        margin-bottom: 20px !important;
-        /* Tighter Title Margin */
+    .certificate-section .section-title-v2 {
+        margin-bottom: 10px !important;
+        /* Pull image up */
+        padding-bottom: 0 !important;
     }
 
     /* Show ONLY the first item */
@@ -2288,15 +2309,16 @@ ul {
     .cert-item:first-child {
         display: inline-block;
         margin: 0 auto;
+        margin-top: 0 !important;
     }
 
     .cert-item img {
         height: auto;
         max-width: 80%;
-        /* Ensure it fits nicely */
         max-height: 250px;
-        margin: 0;
-        /* Remove margins */
+        margin: 0 !important;
+        margin-bottom: 10px !important;
+        /* Pull button up */
     }
 
     .cert-item p {
@@ -2309,13 +2331,18 @@ ul {
 
     .mobile-cert-btn-wrapper {
         display: block;
-        margin-top: 20px;
-        /* Tight margin to image */
+        margin-top: 0 !important;
+        /* Tight spacing */
     }
 
     /* 5. News & Notice: Ultra Compact List Row (Mobile) */
     .news-section .container {
         padding: 0 20px;
+    }
+
+    /* Show only 4 items */
+    .news-card:nth-child(n+5) {
+        display: none !important;
     }
 
     .section-header {
@@ -2401,10 +2428,12 @@ ul {
 
     /* Mobile Logo Optimization */
     .logo img {
-        max-width: 130px !important;
-        /* Reduced from Desktop */
+        max-width: 110px !important;
+        /* Further reduced from 130px */
         height: auto !important;
         margin-left: 0 !important;
+        padding-top: 8px !important;
+        /* Increased padding to push down further */
     }
 
     .footer-logo img {
@@ -2420,20 +2449,45 @@ ul {
     }
 
     .section-title-v2 {
-        font-size: 22px;
+        font-size: 22px !important;
+        /* Enforce consistency */
+    }
+
+    /* Sub-Visual Banner Text Mobile Optimization */
+    /* Sub-Visual Banner Height */
+    .sub-visual {
+        height: 140px !important;
+        /* Slimmer */
     }
 
     /* Sub-Visual Banner Text Mobile Optimization */
     .sub-visual h2 {
-        font-size: 22px !important;
-        /* Compact Headline */
+        font-size: 20px !important;
+        /* Reduced to 20px */
         line-height: 1.3 !important;
         padding: 0 20px !important;
-        /* Safe Area */
         word-break: keep-all !important;
-        /* Prevent awkward breaks */
         width: 100%;
         box-sizing: border-box;
+    }
+
+    /* Notice Page Table Optimization */
+    .notice-table th,
+    .notice-table td {
+        padding: 8px 4px !important;
+        /* Very tight padding */
+        font-size: 13px !important;
+    }
+
+    .notice-table th:nth-child(3),
+    .notice-table td:nth-child(3) {
+        width: 1px;
+        white-space: nowrap;
+    }
+
+    .notice-table th:nth-child(2),
+    .notice-table td:nth-child(2) {
+        width: auto;
     }
 
     /* --- Company Page (about.html) Mobile Optimization --- */

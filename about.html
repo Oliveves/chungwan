@@ -8,118 +8,224 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / GNB -->
-    <header id="main-header">
-        <div class="container">
+    <!-- Header (Synced with index.html) -->
+    <header id="main-header" class="header-v2">
+        <div class="container-wide header-inner">
             <div class="logo">
-                <a href="index.html">(주)청완</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="(주)청완" onError="this.src='https://via.placeholder.com/150x50?text=CHUNGWAN'">
+                </a>
             </div>
-            <nav id="gnb">
+            <nav id="gnb" class="gnb-v2">
                 <ul>
                     <li><a href="about.html" class="active">회사소개</a></li>
                     <li><a href="product_floor.html">층상배관</a></li>
-                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
-                    <li><a href="product_fire.html">층간방화재</a></li>
+                    <li><a href="product_fire.html">층간방화자재</a></li>
                     <li><a href="product_under.html">층하배관</a></li>
+                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
                     <li><a href="support.html">고객센터</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1>회사소개</h1>
-                <p>Company Introduction</p>
-            </div>
-        </section>
+    <!-- Sub-Visual Banner -->
+    <section class="sub-visual">
+        <h2>COMPANY / 회사소개</h2>
+    </section>
 
-        <!-- Greeting Section (Verbatim Content) -->
-        <section id="greeting" class="content-section">
-            <div class="container">
-                <h2 class="section-title">CEO 인사말</h2>
-                <div class="text-content verbatim-text">
-                    <p><strong>CEO 인사말</strong></p>
-                    <p>저희 ㈜청완의 홈페이지를 방문해 주셔서 진심으로 환영합니다.</p>
-                    <p>청완은 욕실배관자재 전문 생산업체로 지난 1993년 5월 설립한 이래 지속적인 기술개발로 기존 자재는 물론 층상이중배관 시스템을 비롯한 혁신적인 신공법을 고안해 여러분의 쾌적한 삶을 위해 끊임없는 노력을 기울이고 있습니다.</p>
-                    <p>특히 2007년을 기점으로 ‘국토교통부 건설신기술(N.E.T) 제 623호’로 선정된 ‘층상이중배관시스템(Double Up System)’은 욕실 층간소음과 냄새로부터 소비자를 해방시켰습니다. LH공사, SH공사 등 공공아파트 뿐 아니라 삼성물산, GS건설, 현대건설, 현대산업개발, SK건설 등 국내 유수 건설사 아파트에 적용해 신공법으로 건설된 아파트만도 10만가구에 달합니다.</p>
-                    <p>청완은 이에 만족하지 않고 지속적인 신공법과 자재개발에 힘쓴 결과 2018년에는 기존 자재보다 시공이 간편하고 안전도를 높인 층간방화재(Fire Block)를 개발해 특허를 획득하고 인증기관으로부터 그 성능을 인증 받아 건설현장에 적용하고 있습니다.</p>
-                    <p>저희 ㈜청완은 앞으로도 건설업체와 소비자 모두 만족할 수 있는 제품을 보급하기 위해 모든 노력을 경주할 것이며, 여러분의 삶의 질을 향상시키기 위해 최선을 다할 것을 약속합니다.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <ul>
+            <li><a href="#ceo" class="active">CEO 인사말</a></li>
+            <li><a href="#history">회사연혁</a></li>
+            <li><a href="#cert">특허 및 인증사항</a></li>
+            <li><a href="#location">오시는 길</a></li>
+        </ul>
+    </div>
 
-        <!-- History Section (Verbatim Content) -->
-        <section id="history" class="content-section bg-grey">
-            <div class="container">
-                <h2 class="section-title">회사연혁</h2>
-                <div class="history-content">
-                    <div class="history-block">
-                        <h3>2010 ~ 2018</h3>
-                        <ul class="history-list-verbatim">
-                            <li><span class="date">2018. 현재</span> : LH, SH, 삼성, GS, 현대산업개발, 롯데, 대우, 현대건설 등 30여 개의 건설업체에 210,000여 세대 시공 및 설계 완료(이중 10만여 세대 입주)</li>
-                            <li><span class="date">2018. 02.</span> : Fire Block 생산시설 완료</li>
-                            <li><span class="date">2017. 06.</span> : 층간방화재 관련 특허 등록</li>
-                            <li><span class="date">2016. 02.</span> : 경향하우징페어/기계설비종합전시회 출품</li>
-                            <li><span class="date">2013. 04.</span> : 국토교양부 건설신기술(N.E.T) 인증 기간 연장</li>
-                            <li><span class="date">2013. 06.</span> : 서울시 층간 소음 공감 EXPO 전시</li>
-                            <li><span class="date">2012. 06.</span> : 대한설비공학회 하계학술발표대회 발표</li>
-                            <li><span class="date">2012. 06.</span> : 2012 국토해양기술대전 전시</li>
-                            <li><span class="date">2011. 05.</span> : 국토해양부 건설신기술(N.E.T) 인증 획득</li>
-                            <li><span class="date">2010. 06.</span> : LH공사 신기술 인정서 획득</li>
-                        </ul>
-                    </div>
-                    <div class="history-block">
-                        <h3>1993 ~ 2009</h3>
-                        <ul class="history-list-verbatim">
-                            <li><span class="date">2009. 11.</span> : 2009 한국설비기술협회 기술상 수상</li>
-                            <li><span class="date">2009. 01.</span> : Double Up System 특허 등록(30여건)</li>
-                            <li><span class="date">2008. 11.</span> : GS건설 경영 혁신활동 장려상 수상</li>
-                            <li><span class="date">2008. 10.</span> : 친환경 건자재 국토 해양부 장관상 수상</li>
-                            <li><span class="date">2007. 10.</span> : Double Up system 전시관 OPEN</li>
-                            <li><span class="date">2007. 09.</span> : ㈜청완으로 상호 변경</li>
-                            <li><span class="date">2005. 10.</span> : 포천군 가산면 가산리 사무실 공장 신축 확장</li>
-                            <li><span class="date">2000. 01.</span> : ISO 9002 인증 획득(한국능률협회)</li>
-                            <li><span class="date">1997. 10.</span> : 포천군 가산면 정교리 공장 설립</li>
-                            <li><span class="date">1996. 07.</span> : 청완산업으로 법인 전환</li>
-                            <li><span class="date">1993. 05.</span> : 회사설립</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Location Section (Verbatim Content) -->
-        <section id="location" class="content-section">
-            <div class="container">
-                <h2 class="section-title">오시는 길</h2>
-                <div class="location-box verbatim-text">
-                    <p><strong>주소 및 전화안내</strong></p>
-                    <p>주소 : 경기도 포천시 가산면 시우동3길 63(가산리 374번지)</p>
-                    <p>전화 : (031) 543 - 0025</p>
-                    <p>FAX : (031) 543 - 9494</p>
-                    <!-- Map Placeholder -->
-                    <div class="map-placeholder">
-                        지도 영역 (Naver/Google Map API 연동 공간)
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
+    <!-- CEO Section -->
+    <section id="ceo" class="section-v2">
         <div class="container">
-            <p>대표이사 : 최해권 | 본사 및 공장 : 경기도 포천시 가산면 시우동3길 63(가산리 374번지) | 대표전화 : (031)543-0025 / Fax.(031)543-9494</p>
-            <p class="copyright">Copyright 2018 ChungWan Co., Ltd. All rights reserved.</p>
+            <div class="ceo-container">
+                <div class="ceo-photo">
+                    <img src="images/ceo.jpg" alt="CEO Photo" onError="this.src='https://via.placeholder.com/400x500?text=CEO+Photo'">
+                </div>
+                    <div class="ceo-text">
+                        <h3>CEO 인사말</h3>
+                        <p>저희 ㈜청완의 홈페이지를 방문해 주셔서 진심으로 환영합니다.</p>
+                        <p>청완은 욕실배관자재 전문 생산업체로 지난 1993년 5월 설립한 이래 지속적인 기술개발로 기존 자재는 물론 층상이중배관 시스템을 비롯한 혁신적인 신공법을 고안해 여러분의 쾌적한 삶을 위해 끊임없는 노력을 기울이고 있습니다.</p>
+                        <p>특히 2007년을 기점으로 ‘국토교통부 건설신기술(N.E.T) 제 623호’로 선정된 ‘층상이중배관시스템(Double Up System)’은 욕실 층간소음과 냄새로부터 소비자를 해방시켰습니다. LH공사, SH공사 등 공공아파트 뿐 아니라 삼성물산, GS건설, 현대건설, 현대산업개발, SK건설 등 국내 유수 건설사 아파트에 적용해 신공법으로 건설된 아파트만도 10만가구에 달합니다.</p>
+                        <p>청완은 이에 만족하지 않고 지속적인 신공법과 자재개발에 힘쓴 결과 2018년에는 기존 자재보다 시공이 간편하고 안전도를 높인 층간방화재(Fire Block)를 개발해 특허를 획득하고 인증기관으로부터 그 성능을 인증 받아 건설현장에 적용하고 있습니다.</p>
+                        <p>저희 ㈜청완은 앞으로도 건설업체와 소비자 모두 만족할 수 있는 제품을 보급하기 위해 모든 노력을 경주할 것이며, 여러분의 삶의 질을 향상시키기 위해 최선을 다할 것을 약속합니다.
+                        <br><br>
+                        대표이사 &nbsp; 최 해 권
+                        <span class="sign-wrapper" style="display:block; text-align:right; margin-top:10px;">
+                            <img src="images/sign.jpg" alt="Signature" class="ceo-sign-img" onError="this.src='https://via.placeholder.com/220x80?text=Signature'">
+                        </span>
+                        </p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="section-v2 bg-light">
+        <div class="container">
+            <h2 class="section-title-v2">HISTORY <span class="text-blue">회사연혁</span></h2>
+            
+            <div class="history-timeline">
+                <!-- 2018 ~ Present -->
+                <div class="history-row">
+                    <div class="history-year">2018 ~</div>
+                    <div class="history-desc">
+                        <p><strong>2018. 현재</strong> : LH, SH, 삼성, GS, 현대산업개발, 롯데, 대우, 현대건설 등 30여 개의 건설업체에 210,000여 세대 시공 및 설계 완료(이중 10만여 세대 입주)</p>
+                        <p><strong>2018. 02.</strong> : Fire Block 생산시설 완료</p>
+                    </div>
+                </div>
+                
+                <!-- 2010 ~ 2017 -->
+                 <div class="history-row">
+                    <div class="history-year">2010 ~ 2017</div>
+                    <div class="history-desc">
+                        <p><strong>2017. 06.</strong> : 층간방화재 관련 특허 등록</p>
+                        <p><strong>2016. 02.</strong> : 경향하우징페어/기계설비종합전시회 출품</p>
+                        <p><strong>2013. 04.</strong> : 국토교양부 건설신기술(N.E.T) 인증 기간 연장</p>
+                        <p><strong>2013. 06.</strong> : 서울시 층간 소음 공감 EXPO 전시</p>
+                        <p><strong>2012. 06.</strong> : 대한설비공학회 하계학술발표대회 발표</p>
+                        <p><strong>2012. 06.</strong> : 2012 국토해양기술대전 전시</p>
+                        <p><strong>2011. 05.</strong> : 국토해양부 건설신기술(N.E.T) 인증 획득</p>
+                        <p><strong>2010. 06.</strong> : LH공사 신기술 인정서 획득</p>
+                    </div>
+                </div>
+
+                <!-- 1993 ~ 2009 -->
+                 <div class="history-row">
+                    <div class="history-year">1993 ~ 2009</div>
+                    <div class="history-desc">
+                        <p><strong>2009. 11.</strong> : 2009 한국설비기술협회 기술상 수상</p>
+                        <p><strong>2009. 01.</strong> : Double Up System 특허 등록(30여건)</p>
+                        <p><strong>2008. 11.</strong> : GS건설 경영 혁신활동 장려상 수상</p>
+                        <p><strong>2008. 10.</strong> : 친환경 건자재 국토 해양부 장관상 수상</p>
+                        <p><strong>2007. 10.</strong> : Double Up system 전시관 OPEN</p>
+                        <p><strong>2007. 09.</strong> : ㈜청완으로 상호 변경</p>
+                        <p><strong>2005. 10.</strong> : 포천군 가산면 가산리 사무실 공장 신축 확장</p>
+                        <p><strong>2000. 01.</strong> : ISO 9002 인증 획득(한국능률협회)</p>
+                        <p><strong>1997. 10.</strong> : 포천군 가산면 정교리 공장 설립</p>
+                        <p><strong>1996. 07.</strong> : 청완산업으로 법인 전환</p>
+                        <p><strong>1993. 05.</strong> : 회사설립</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Section -->
+    <section id="cert" class="section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">CERTIFICATE <span class="text-blue">특허 및 인증</span></h2>
+            
+            <div class="cert-grid-page">
+                <!-- 18 items, images only -->
+                <div class="cert-item"><img src="images/i_cert01.gif" alt="Cert 01"></div>
+                <div class="cert-item"><img src="images/i_cert02.gif" alt="Cert 02"></div>
+                <div class="cert-item"><img src="images/i_cert03.gif" alt="Cert 03"></div>
+                <div class="cert-item"><img src="images/i_cert04.gif" alt="Cert 04"></div>
+                <div class="cert-item"><img src="images/i_cert05.gif" alt="Cert 05"></div>
+                <div class="cert-item"><img src="images/i_cert06.gif" alt="Cert 06"></div>
+                <div class="cert-item"><img src="images/i_cert07.gif" alt="Cert 07"></div>
+                <div class="cert-item"><img src="images/i_cert08.gif" alt="Cert 08"></div>
+                <div class="cert-item"><img src="images/i_cert09.gif" alt="Cert 09"></div>
+                <div class="cert-item"><img src="images/i_cert10.gif" alt="Cert 10"></div>
+                <div class="cert-item"><img src="images/i_cert11.gif" alt="Cert 11"></div>
+                <div class="cert-item"><img src="images/i_cert12.gif" alt="Cert 12"></div>
+                <div class="cert-item"><img src="images/i_cert13.gif" alt="Cert 13"></div>
+                <div class="cert-item"><img src="images/i_cert14.gif" alt="Cert 14"></div>
+                <div class="cert-item"><img src="images/i_cert15.gif" alt="Cert 15"></div>
+                <div class="cert-item"><img src="images/i_cert16.gif" alt="Cert 16"></div>
+                <div class="cert-item"><img src="images/i_cert17.gif" alt="Cert 17"></div>
+                <div class="cert-item"><img src="images/i_cert18.gif" alt="Cert 18"></div>
+            </div>
+            
+            <p class="cert-scroll-hint" style="margin-top:20px;">* 이미지를 클릭하면 확대해서 보실 수 있습니다.</p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section-v2 bg-light">
+        <div class="container">
+            <h2 class="section-title-v2">LOCATION <span class="text-blue">오시는 길</span></h2>
+            
+            <div class="location-wrapper">
+                <div class="location-map">
+                    <!-- Map Placeholder -->
+                    <i class="fas fa-map-marked-alt fa-3x"></i>
+                    <p style="margin-top:10px;">지도 영역 (Naver/Google Map API)</p>
+                </div>
+                <div class="location-info">
+                    <div class="loc-item">
+                        <h4>ADDRESS</h4>
+                        <p>경기도 포천시 가산면 시우동3길 63<br>(가산리 374번지)</p>
+                    </div>
+                    <div class="loc-item">
+                        <h4>TEL</h4>
+                        <p>(031) 543 - 0025</p>
+                    </div>
+                     <div class="loc-item">
+                        <h4>FAX</h4>
+                        <p>(031) 543 - 9494</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Synced with index.html) -->
+    <footer class="footer-v2">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/foot_logo.png" alt="(주)청완" style="height: 40px; opacity: 0.9;">
+            </div>
+            <div class="footer-info">
+                <p>상호: (주)청완 | 대표이사 : 최해권 | 사업자등록번호: 127-81-67890</p>
+                <p>본사 및 공장 : 경기도 포천시 가산면 시우동3길 63 (가산리 374번지)</p>
+                <p>TEL: (031)543-0025 | FAX: (031)543-9494 | Email: cw@chungwan.co.kr</p>
+                <p class="copyright">Copyright &copy; ChungWan Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Certificate Modal (Hidden by default) -->
+    <!-- Script will generate it automatically based on styles -->
+
     <script src="js/script.js"></script>
+    <script>
+        // Simple Tab Active Script for About Page
+        document.addEventListener('DOMContentLoaded', () => {
+             const tabLinks = document.querySelectorAll('.tab-nav a');
+             const sections = document.querySelectorAll('section');
+
+             window.addEventListener('scroll', () => {
+                 let current = '';
+                 sections.forEach(section => {
+                     const sectionTop = section.offsetTop;
+                     if (window.scrollY >= (sectionTop - 150)) {
+                         current = section.getAttribute('id');
+                     }
+                 });
+
+                 tabLinks.forEach(a => {
+                     a.classList.remove('active');
+                     if (a.getAttribute('href').includes(current)) {
+                         a.classList.add('active');
+                     }
+                 });
+             });
+        });
+    </script>
 </body>
 </html>

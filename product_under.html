@@ -12,18 +12,20 @@
 <body>
 
     <!-- Header / GNB -->
-    <header id="main-header">
-        <div class="container">
+    <header id="main-header" class="header-v2">
+        <div class="container-wide header-inner">
             <div class="logo">
-                <a href="index.html">(주)청완</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="(주)청완" onError="this.src='https://via.placeholder.com/150x50?text=CHUNGWAN'">
+                </a>
             </div>
-            <nav id="gnb">
+            <nav id="gnb" class="gnb-v2">
                 <ul>
                     <li><a href="about.html">회사소개</a></li>
                     <li><a href="product_floor.html">층상배관</a></li>
-                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
-                    <li><a href="product_fire.html">층간방화재</a></li>
+                    <li><a href="product_fire.html">층간방화자재</a></li>
                     <li><a href="product_under.html" class="active">층하배관</a></li>
+                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
                     <li><a href="support.html">고객센터</a></li>
                 </ul>
             </nav>
@@ -31,57 +33,80 @@
     </header>
 
     <main>
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Sub-Visual Banner -->
+        <section class="sub-visual" style="background-image: url('images/company_bg.png');">
             <div class="container">
-                <h1>층하배관</h1>
-                <p>Under-floor Piping System</p>
+                <h2>UNDER-FLOOR PIPING / 층하배관</h2>
             </div>
         </section>
 
-        <!-- Product Specs -->
-        <section id="specs" class="content-section">
+        <!-- Product Content -->
+        <section class="section-v2">
             <div class="container">
-                <h2 class="section-title">주요 제품 정보</h2>
-                <div class="product-grid">
-                    <!-- Placeholder Product -->
+                <!-- Section Title with Blue Vertical Point -->
+                <h3 class="section-title-blue-point">층하배관 자재 (일반 Sleeve 및 SEXTIA)</h3>
+                
+                <!-- Product Grid 4-Column -->
+                <div class="product-grid-solid">
+                    <!-- Row 1 -->
+                    <!-- Card 1 -->
                     <div class="product-card">
-                        <div class="product-header">
-                            <h3>일반 Sleeve 및 SEXTIA</h3>
-                        </div>
-                        <div class="product-body">
-                            <div class="drawing-box">
-                                <div class="placeholder-img">도면 준비중</div>
-                            </div>
-                            <div class="spec-table-box">
-                                <table class="spec-table">
-                                    <tr>
-                                        <th>모델명</th>
-                                        <td>SEXTIA</td>
-                                    </tr>
-                                    <tr>
-                                        <th>용도</th>
-                                        <td>배수 배관 자재</td>
-                                    </tr>
-                                    <tr>
-                                        <th>특징</th>
-                                        <td>Flow-Drain</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                        <div class="pc-img"><img src="images/under_1.jpg" alt="Flow – Drain" onError="this.src='https://via.placeholder.com/300x200?text=Under+1'"></div>
+                        <div class="pc-label">Flow – Drain</div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_2.jpg" alt="성형 슬리브" onError="this.src='https://via.placeholder.com/300x200?text=Under+2'"></div>
+                        <div class="pc-label">성형 슬리브</div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_3.jpg" alt="관통 슬리브" onError="this.src='https://via.placeholder.com/300x200?text=Under+3'"></div>
+                        <div class="pc-label">관통 슬리브</div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_4.jpg" alt="SEXTIA" onError="this.src='https://via.placeholder.com/300x200?text=Under+4'"></div>
+                        <div class="pc-label">SEXTIA</div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <!-- Card 5 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_5.jpg" alt="PVC 파이프 마개" onError="this.src='https://via.placeholder.com/300x200?text=Under+5'"></div>
+                        <div class="pc-label">PVC 파이프 마개</div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_6.jpg" alt="볼텍스 발코니 드레인" onError="this.src='https://via.placeholder.com/300x200?text=Under+6'"></div>
+                        <div class="pc-label">볼텍스 발코니 드레인</div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_7.jpg" alt="주철제 루프드레인" onError="this.src='https://via.placeholder.com/300x200?text=Under+7'"></div>
+                        <div class="pc-label">주철제 루프드레인</div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="product-card">
+                        <div class="pc-img"><img src="images/under_8.jpg" alt="기타 자재" onError="this.src='https://via.placeholder.com/300x200?text=Under+8'"></div>
+                        <div class="pc-label">기타 자재</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer-v2">
         <div class="container">
-            <p>상호: (주)청완 | 대표이사 : 최해권 | 사업자등록번호: 000-00-00000</p>
-            <p>본사 및 공장 : 경기도 포천시 가산면 시우동3길 63 (가산리 374번지)</p>
-            <p>TEL: (031)543-0025 | FAX: (031)543-9494</p>
-            <p class="copyright">Copyright &copy; ChungWan Co., Ltd. All rights reserved.</p>
+            <div class="footer-logo">
+                <img src="images/foot_logo.png" alt="(주)청완" style="height: 40px; opacity: 0.9;">
+            </div>
+            <div class="footer-info">
+                <p>상호: (주)청완 | 대표이사 : 최해권 | 사업자등록번호: 127-81-67890</p>
+                <p>본사 및 공장 : 경기도 포천시 가산면 시우동3길 63 (가산리 374번지)</p>
+                <p>TEL: (031)543-0025 | FAX: (031)543-9494 | Email: cw@chungwan.co.kr</p>
+                <p class="copyright">Copyright &copy; ChungWan Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

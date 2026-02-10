@@ -3,85 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(주)청완 - 층간방화재</title>
+    <title>(주)청완 - 층간방화자재</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="sub-page">
 
-    <!-- Header / GNB -->
-    <header id="main-header">
-        <div class="container">
+    <!-- Header / GNB (Synced with index.html) -->
+    <header id="main-header" class="header-v2">
+        <div class="container-wide header-inner">
             <div class="logo">
-                <a href="index.html">(주)청완</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="(주)청완" onError="this.src='https://via.placeholder.com/150x50?text=CHUNGWAN'">
+                </a>
             </div>
-            <nav id="gnb">
+            <nav id="gnb" class="gnb-v2">
                 <ul>
                     <li><a href="about.html">회사소개</a></li>
                     <li><a href="product_floor.html">층상배관</a></li>
-                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
-                    <li><a href="product_fire.html" class="active">층간방화재</a></li>
+                    <li><a href="product_fire.html" class="active">층간방화자재</a></li>
                     <li><a href="product_under.html">층하배관</a></li>
+                    <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
                     <li><a href="support.html">고객센터</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Sub-Visual Banner (Global Style) -->
+    <section class="sub-visual">
+        <!-- Overlay is handled by CSS ::before -->
+        <h2>FIRE STOP MATERIAL / 층간방화자재</h2>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#overview" class="active">층간방화자재 개요</a></li>
+                <li><a href="#products">제품소개</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Tab 1: Overview -->
+        <section id="overview" class="section-v2">
             <div class="container">
-                <h1>층간방화재</h1>
-                <p>Firestop Block System</p>
-            </div>
-        </section>
-
-        <!-- System Intro -->
-        <section class="content-section">
-            <div class="container">
-                <div class="text-content">
-                    <h2 class="section-title">제품 개요</h2>
-                    <p>내화 충전재가 내장되어 있어 별도 시공이 필요 없고, 파이프 고정 클램프와 클램프 가이드로 구성되어 간편하고 견고하게 파이프를 고정합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Specs -->
-        <section id="specs" class="content-section bg-grey">
-            <div class="container">
-                <h2 class="section-title">주요 제품 정보</h2>
-                <div class="product-grid">
-                    <!-- Product Item: 층간방화재 -->
-                    <div class="product-card">
-                        <div class="product-header">
-                            <h3>층간 방화재 (Firestop Block)</h3>
+                <h3 class="title-blue-point" style="border-left-color: #005EB8;">층간방화자재 핵심 기술</h3>
+                
+                <div class="firestop-showcase" id="firestopShowcase">
+                    <!-- Left: Visual Col (Main + Sub Images) -->
+                    <div class="fire-visual-col">
+                        <div class="fire-image-container" id="fireMainImage">
+                            <img src="images/firestop_main.jpg" alt="층간방화자재 구조" class="fire-glow" onError="this.src='https://via.placeholder.com/500x400?text=Firestop+Main'">
                         </div>
-                        <div class="product-body">
-                            <div class="drawing-box">
-                                <img src="assets/images/cate2_1_1.jpg" alt="층간방화재" style="max-height: 250px; width: auto;">
+                        <div class="fire-sub-images">
+                            <div class="fire-sub-card sub-1">
+                                <img src="images/firestop_sub_1.png" alt="내화충전재 이탈 금속 받침판" onError="this.src='https://via.placeholder.com/200x150?text=Sub+1'">
+                                <p>내화충전재 이탈 방지 금속 받침판</p>
                             </div>
-                            <div class="spec-table-box">
-                                <table class="spec-table">
-                                    <tr>
-                                        <th>모델명</th>
-                                        <td>Fire Block System</td>
-                                    </tr>
-                                    <tr>
-                                        <th>내화성능</th>
-                                        <td>2시간 (KFI 인정)</td>
-                                    </tr>
-                                    <tr>
-                                        <th>구성</th>
-                                        <td>고정구 + 내화충전재 일체형</td>
-                                    </tr>
-                                    <tr>
-                                        <th>설치위치</th>
-                                        <td>슬라브 관통부</td>
-                                    </tr>
-                                </table>
+                            <div class="fire-sub-card sub-2">
+                                <img src="images/firestop_sub_2.png" alt="PB: Fire Block" onError="this.src='https://via.placeholder.com/200x150?text=Sub+2'">
+                                <p>발포성 내화 충전재<br>(PB:Fire Block)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Technical Feature Blocks -->
+                    <div class="feature-list">
+                        <!-- Feature 1 -->
+                        <div class="feature-block block-01">
+                            <div class="feature-number">01</div>
+                            <div class="feature-content">
+                                <h4>시공 편의성 (Simplicity)</h4>
+                                <p>내화 충전재 일체형 구조로 별도 공정 없이, 전용 클램프를 통해 파이프를 빠르고 견고하게 고정합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="feature-block block-02" id="block02">
+                            <div class="feature-number">02</div>
+                            <div class="feature-content">
+                                <h4>내진 및 유동성 (Stability)</h4>
+                                <p><span class="highlight-text">30mm 유동성 확보</span>로 진동과 지진에 강하며, 상부 편심 기능으로 배관 위치 조절이 매우 편리합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="feature-block block-03" id="block03">
+                            <div class="feature-number">03</div>
+                            <div class="feature-content">
+                                <h4>완벽한 화재 차단 (Safety)</h4>
+                                <p>즉각 반응하는 <span class="highlight-text">내화 충전재</span>와 <span class="highlight-text">이탈 방지 금속 받침판</span>이 화재 시 충전재 탈락 없이 불길을 완벽히 방어합니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="feature-block block-04">
+                            <div class="feature-number">04</div>
+                            <div class="feature-content">
+                                <h4>우수한 경제성 (Cost-Effective)</h4>
+                                <p>별도 설치 공사가 필요 없는 구조로 공기를 단축하며, 자재비와 시공 비용을 획기적으로 절감합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -89,31 +115,88 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
-        <section id="certs" class="content-section">
+        <!-- Tab 2: Product Grid -->
+        <section id="products" class="section-v2" style="display:none;">
             <div class="container">
-                <h2 class="section-title">관련 인증</h2>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <div class="cert-thumb">
-                            <img src="assets/images/i_cert04.gif" alt="KFI 인정서">
+                 <h3 class="title-blue-point">층간방화재 주요 제품</h3>
+                 
+                 <!-- 3-Column Grid using Proposal Style -->
+                 <div class="proposal-grid col-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <!-- Card 1 -->
+                    <div class="tech-card">
+                        <div class="tc-img">
+                            <img src="images/firestop_prod_1.jpg" alt="층간방화용 관통슬리브" onError="this.src='https://via.placeholder.com/300x200?text=Prod+1'">
                         </div>
-                        <p>KFI 인정서</p>
+                        <div class="tc-label">층간방화용 관통슬리브</div>
                     </div>
-                </div>
+                    <!-- Card 2 -->
+                    <div class="tech-card">
+                        <div class="tc-img">
+                             <img src="images/firestop_prod_2.jpg" alt="클램프 통합" onError="this.src='https://via.placeholder.com/300x200?text=Prod+2'">
+                        </div>
+                        <div class="tc-label">클램프 통합</div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="tech-card">
+                         <div class="tc-img">
+                             <img src="images/firestop_prod_3.jpg" alt="벽관통 내화충전재" onError="this.src='https://via.placeholder.com/300x200?text=Prod+3'">
+                        </div>
+                        <div class="tc-label">벽관통 내화충전재</div>
+                    </div>
+                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer (Synced with index.html) -->
+    <footer class="footer-v2">
         <div class="container">
-            <p>상호: (주)청완 | 대표이사 : 최해권 | 사업자등록번호: 000-00-00000</p>
-            <p>본사 및 공장 : 경기도 포천시 가산면 시우동3길 63 (가산리 374번지)</p>
-            <p>TEL: (031)543-0025 | FAX: (031)543-9494</p>
-            <p class="copyright">Copyright &copy; ChungWan Co., Ltd. All rights reserved.</p>
+            <div class="footer-logo">
+                <img src="images/foot_logo.png" alt="(주)청완" style="height: 40px; opacity: 0.9;">
+            </div>
+            <div class="footer-info">
+                <p>상호: (주)청완 | 대표이사 : 최해권 | 사업자등록번호: 127-81-67890</p>
+                <p>본사 및 공장 : 경기도 포천시 가산면 시우동3길 63 (가산리 374번지)</p>
+                <p>TEL: (031)543-0025 | FAX: (031)543-9494 | Email: cw@chungwan.co.kr</p>
+                <p class="copyright">Copyright &copy; ChungWan Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             // Tab Switching Logic
+             const tabs = document.querySelectorAll('.tab-nav a');
+             const overviewSection = document.getElementById('overview');
+             const productsSection = document.getElementById('products');
+             const sections = [overviewSection, productsSection];
+
+             tabs.forEach((tab, index) => {
+                 tab.addEventListener('click', (e) => {
+                     e.preventDefault();
+                     tabs.forEach(t => t.classList.remove('active'));
+                     tab.classList.add('active');
+                     sections.forEach((sec, i) => {
+                         sec.style.display = (i === index) ? 'block' : 'none';
+                     });
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                 });
+             });
+
+             // --- Hover Interaction via JS (for broader browser support) ---
+             const showcase = document.getElementById('firestopShowcase');
+             const mainImg = document.getElementById('fireMainImage');
+
+             if (mainImg) {
+                 mainImg.addEventListener('mouseenter', () => {
+                     showcase.classList.add('image-hovered');
+                 });
+                 mainImg.addEventListener('mouseleave', () => {
+                     showcase.classList.remove('image-hovered');
+                 });
+             }
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

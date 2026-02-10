@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Chungwan Website Loaded');
 
-    // --- Hero Text Rotator ---
-    const rotatingSubtitle = document.getElementById('hero-rotating-subtitle');
-    if (rotatingSubtitle) {
+    // --- Hero Text Rotator (Synchronized Fade) ---
+    const textWrapper = document.getElementById('hero-text-wrapper');
+    const subtitleElement = document.getElementById('hero-subtitle');
+
+    if (textWrapper && subtitleElement) {
         const subtitles = [
             "청완은 우리 삶의 질을 높이기 위해 최선을 다 합니다.",
             "Amenity - Safety - Sustainability<br><small>공동주택을 쾌적하게, 안전하게, 쉽게 유지보수 할 수 있는 제품을 개발 합니다.</small>",
@@ -12,19 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let subIndex = 0;
 
         setInterval(() => {
-            // Fade out
-            rotatingSubtitle.classList.add('hidden');
+            // 1. Fade OUT the entire block
+            textWrapper.classList.add('hidden');
 
             setTimeout(() => {
-                // Change text
+                // 2. Update Content (Subtitle only)
                 subIndex = (subIndex + 1) % subtitles.length;
-                rotatingSubtitle.innerHTML = subtitles[subIndex];
+                subtitleElement.innerHTML = subtitles[subIndex];
                 
-                // Fade in
-                rotatingSubtitle.classList.remove('hidden');
-            }, 500); // Wait for fade out
+                // 3. Fade IN the entire block
+                textWrapper.classList.remove('hidden');
+            }, 800); // Wait for opacity transition (matches CSS 0.8s)
 
-        }, 4000); // 4 seconds total cycle
+        }, 5000); // 5 seconds total cycle (slightly longer to enjoy static text)
     }
 
 
@@ -54,14 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     modalImg.id = 'img01';
     Object.assign(modalImg.style, {
         display: 'block',
-        maxWidth: '80%',
-        maxHeight: '80%',
-        width: 'auto', /* Allow scaling */
+        maxWidth: '90vw', /* Updated to 90vw */
+        maxHeight: '90vh', /* Updated to 90vh */
+        width: 'auto', 
         height: 'auto',
         objectFit: 'contain',
         boxShadow: '0 0 20px rgba(0,0,0,0.5)',
         borderRadius: '8px',
-        margin: '0 auto' /* Reset margin to rely on flex centering */
+        margin: '0 auto' 
     });
 
     const closeBtn = document.createElement('span');
@@ -80,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const captionText = document.createElement('div');
     Object.assign(captionText.style, {
+        display: 'none', /* HIDE CAPTION TEXT AS REQUESTED */
         margin: '20px auto 0',
-        display: 'block',
         width: 'auto',
         maxWidth: '80%',
         textAlign: 'center',
@@ -101,7 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('click', function() {
             modal.style.display = 'flex'; // Important: set to flex to activate centering
             modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            // captionText.innerHTML = this.alt; // Disabled as caption is hidden
+            
+            // Enlarge Image logic applied via CSS !important overrides in style.css or direct style set here
+            modalImg.style.maxWidth = '90vw';
+            modalImg.style.maxHeight = '90vh';
         });
     });
 

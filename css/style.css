@@ -679,7 +679,7 @@ ul {
 
 @media (max-width: 768px) {
     .product-grid-solid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1058,7 +1058,8 @@ ul {
 
 @media (max-width: 768px) {
     .sub-visual {
-        height: 200px;
+        height: 140px;
+        /* Reduced from 200px */
     }
 
     .sub-visual h2 {
@@ -1243,6 +1244,10 @@ ul {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.proposal-grid.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .proposal-grid.col-2 {
     grid-template-columns: repeat(2, 1fr);
 }
@@ -1371,7 +1376,9 @@ ul {
 }
 
 @media (max-width: 1024px) {
-    .proposal-grid.col-4 {
+
+    .proposal-grid.col-4,
+    .proposal-grid.col-3 {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1383,8 +1390,30 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .proposal-grid.col-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* User REQUEST: 2 cols on mobile for Fire Stop */
+    }
+
     #product-info .info-layout {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile Card Height Optimization for Fire Stop (Match Under-Piping style) */
+    .tc-img img {
+        height: auto !important;
+        /* Allow image to scale down */
+        max-height: 150px;
+        /* Cap height to ensure compactness */
+        padding: 10px;
+        /* Reduce padding if needed */
+    }
+
+    .tc-label {
+        padding: 15px 10px;
+        /* Reduce vertical padding */
+        font-size: 16px;
+        /* Adjust font size if needed */
     }
 }
 
@@ -1734,8 +1763,17 @@ ul {
 
     /* Fire Stop Visual Section: Compact Grid */
     .firestop-showcase {
+        flex-direction: column-reverse;
+        /* Text First (Bottom HTML), Images Last (Top HTML) */
+        gap: 0;
+        /* Remove parent gap, control via margin */
+    }
+
+    .fire-visual-col {
+        display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
+        /* Small gap between Main Image and Sub-Cards */
     }
 
     .fire-sub-images {
@@ -1759,6 +1797,8 @@ ul {
     /* Feature List: Compact Design */
     .feature-list {
         gap: 10px;
+        margin-bottom: 40px;
+        /* Distinct separation from Images below */
     }
 
     .feature-block {
@@ -2041,4 +2081,679 @@ ul {
 
 .btn-list:hover {
     background: #333;
+}
+
+/* --- Main Page Mobile Rebuild (Global Max-width 768px) --- */
+
+/* 1. Hamburger Menu & Side Drawer */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    /* Hidden by default */
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    z-index: 2000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-drawer.active {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.drawer-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.close-drawer {
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+}
+
+.drawer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drawer-list li {
+    margin-bottom: 15px;
+}
+
+.drawer-list li a {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* Mobile Certificate Button */
+.mobile-cert-btn-wrapper {
+    display: none;
+    /* Hidden on Desktop */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-view-cert {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* --- Mobile Media Queries --- */
+@media (max-width: 768px) {
+
+    /* 1. Navigation: Hide GNB, Show Hamburger */
+    .gnb-v2 {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex !important;
+        /* Use flex to center icon */
+        align-items: center;
+        height: 100%;
+        /* Full height of header if needed, or just auto */
+        line-height: 1;
+    }
+
+    /* Ensure Header Inner stays centered */
+    .header-inner {
+        align-items: center !important;
+    }
+
+    /* 2. Hero Video: 16:9 Ratio & Compact Text */
+    .video-hero-container {
+        height: auto;
+        aspect-ratio: 16/9;
+        min-height: auto;
+    }
+
+    .hero-content-v2 h1 {
+        font-size: 20px;
+        /* Reduced from Desktop size */
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    .hero-divider {
+        width: 30px;
+        margin: 10px auto;
+    }
+
+    .hero-sub {
+        font-size: 13px;
+        /* Reduced subtext */
+    }
+
+    /* 3. Product & Portfolio: 2-Column Grid */
+    .product-grid-v2 {
+        grid-template-columns: 1fr 1fr;
+        /* 2 Columns */
+        gap: 15px;
+    }
+
+    .card-v2 {
+        height: auto;
+        /* Allow auto height */
+    }
+
+    .card-img {
+        height: 140px;
+        /* Reduced height for compactness */
+    }
+
+    .card-info {
+        padding: 15px;
+    }
+
+    .card-info h3 {
+        font-size: 16px;
+    }
+
+    .card-info p {
+        font-size: 12px;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        /* 2 Columns */
+        gap: 10px;
+    }
+
+    .pf-img {
+        height: 150px;
+        /* Reduced Portfolio Image Height */
+    }
+
+    /* 4. Technical Certificate: Simplify & Compact */
+    .cert-scroll-container {
+        display: block;
+        overflow: hidden;
+        white-space: normal;
+        text-align: center;
+        margin-top: 0;
+        /* Remove top margin from container */
+    }
+
+    /* Reduce Section Padding for Compact Look */
+    .section-v2.cert-section {
+        padding: 40px 0 !important;
+        /* Drastically reduced vertical padding */
+    }
+
+    .cert-section .section-title-v2 {
+        margin-bottom: 20px !important;
+        /* Tighter Title Margin */
+    }
+
+    /* Show ONLY the first item */
+    .cert-item {
+        display: none;
+    }
+
+    .cert-item:first-child {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .cert-item img {
+        height: auto;
+        max-width: 80%;
+        /* Ensure it fits nicely */
+        max-height: 250px;
+        margin: 0;
+        /* Remove margins */
+    }
+
+    .cert-item p {
+        display: none;
+    }
+
+    .cert-scroll-hint {
+        display: none;
+    }
+
+    .mobile-cert-btn-wrapper {
+        display: block;
+        margin-top: 20px;
+        /* Tight margin to image */
+    }
+
+    /* 5. News & Notice: Ultra Compact List Row (Mobile) */
+    .news-section .container {
+        padding: 0 20px;
+    }
+
+    .section-header {
+        margin-bottom: 15px !important;
+        /* Reduced Header Gap */
+        align-items: baseline;
+        /* Align Title and More Link */
+    }
+
+    .news-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .news-card {
+        width: 100% !important;
+        height: 50px;
+        /* Fixed Small Height */
+        display: flex;
+        /* Flex Layout */
+        align-items: center;
+        justify-content: flex-start;
+        /* Align Left */
+        padding: 0;
+        /* Remove Padding */
+        border: none;
+        border-bottom: 1px solid #eee;
+        /* Thin Separator */
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .news-card p {
+        display: none !important;
+        /* Hide Description */
+    }
+
+    .news-cat {
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 10px;
+        /* Pill Shape */
+        margin-bottom: 0;
+        /* Reset */
+        margin-right: 8px;
+        /* Gap to Title */
+        flex-shrink: 0;
+        /* Don't shrink */
+        line-height: 1.2;
+    }
+
+    .news-card h3 {
+        font-size: 13px;
+        margin: 0;
+        font-weight: 500;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 55%;
+        /* Limit Width */
+        line-height: 1.2;
+    }
+
+    .news-date {
+        font-size: 11px;
+        color: #aaa;
+        margin-top: 0;
+        /* Reset */
+        margin-left: auto;
+        /* Push to Right */
+        white-space: nowrap;
+    }
+
+    /* 6. Footer & Typography */
+    .footer-v2 {
+        padding: 30px 0;
+    }
+
+    /* Mobile Logo Optimization */
+    .logo img {
+        max-width: 130px !important;
+        /* Reduced from Desktop */
+        height: auto !important;
+        margin-left: 0 !important;
+    }
+
+    .footer-logo img {
+        max-width: 110px !important;
+        /* Compact Text Logo */
+        height: auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    .footer-info p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .section-title-v2 {
+        font-size: 22px;
+    }
+
+    /* Sub-Visual Banner Text Mobile Optimization */
+    .sub-visual h2 {
+        font-size: 22px !important;
+        /* Compact Headline */
+        line-height: 1.3 !important;
+        padding: 0 20px !important;
+        /* Safe Area */
+        word-break: keep-all !important;
+        /* Prevent awkward breaks */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* --- Company Page (about.html) Mobile Optimization --- */
+
+    /* 1. Sticky Sub-Navigation */
+    .tab-nav {
+        top: 90px;
+        /* Adjust for header height */
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        border-bottom: 1px solid #ddd;
+        background: #f5f5f5;
+    }
+
+    .tab-nav ul {
+        display: flex;
+        /* Ensure flex for horizontal scroll */
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        justify-content: flex-start;
+        /* Start from left */
+        padding: 0;
+        margin: 0;
+        width: auto;
+        /* Allow growth */
+    }
+
+    .tab-nav li {
+        flex: 0 0 auto;
+        /* Allow items to size naturally or fixed */
+        width: auto;
+    }
+
+    .tab-nav a {
+        padding: 15px 20px;
+        /* Comfy touch target */
+        font-size: 14px;
+        border-bottom: 3px solid transparent;
+        /* Prepare for active border */
+        border-right: none;
+        /* Remove dividers if cluttering */
+    }
+
+    .tab-nav a.active {
+        border-bottom-color: var(--secondary-blue);
+        background: transparent;
+        color: var(--secondary-blue);
+    }
+
+    /* 2. CEO Message Layout (Fix: Image First, Title First for Logic) */
+    .mobile-ceo-title {
+        display: block !important;
+        /* Show Mobile Title */
+        font-size: 24px;
+        color: var(--primary-navy);
+        font-weight: 700;
+    }
+
+    .desktop-ceo-title {
+        display: none;
+        /* Hide internal title on mobile */
+    }
+
+    .ceo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ceo-photo {
+        width: 100%;
+        max-width: 280px;
+        /* Limit width */
+        margin: 0 auto;
+        /* Center image */
+        flex: none;
+    }
+
+    .ceo-photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .ceo-text {
+        padding: 0 10px;
+        /* Prevent edge touching */
+    }
+
+    .ceo-text p {
+        font-size: 15px;
+        line-height: 1.7;
+        /* Increased line-height */
+        text-align: left;
+        /* Better for mobile than justify */
+    }
+
+    .ceo-sign-img {
+        float: right;
+        /* Explicit right alignment */
+        margin-top: 10px;
+    }
+
+    /* 3. History Section (Strict Left-Aligned Timeline) */
+    .history-timeline {
+        padding-left: 20px;
+    }
+
+    /* Remove Center Line */
+    .history-timeline::before {
+        display: none;
+    }
+
+    /* Add Mobile Left Line */
+    .history-timeline {
+        border-left: 3px solid #ddd;
+        margin-left: 10px;
+    }
+
+    .history-row {
+        flex-direction: column;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .history-year {
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 0;
+        margin-bottom: 10px;
+        flex: none;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Left Dot */
+    .history-year::after {
+        left: -21.5px;
+        /* Alignment: -20px(pad) - 1.5px(border-center) = -21.5px */
+        transform: translateX(-50%);
+        /* Center the dot itself */
+        top: 6px;
+    }
+
+    .history-desc {
+        padding-left: 20px;
+        flex: none;
+        width: 100%;
+    }
+
+    /* 4. Certificate Section (Mobile Carousel) */
+    .cert-grid-page {
+        display: none !important;
+        /* Hide Grid */
+    }
+
+    .mobile-cert-carousel {
+        display: flex !important;
+        /* Show Carousel */
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .carousel-img-wrapper {
+        flex: 1;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .carousel-img-wrapper img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        border: 1px solid #eee;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-btn {
+        background: rgba(0, 0, 0, 0.05);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+        font-size: 18px;
+        transition: background 0.3s;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(0, 0, 0, 0.1);
+        color: var(--secondary-blue);
+    }
+
+    /* 5. Location Section (Map Height) */
+    .location-wrapper {
+        flex-direction: column;
+    }
+
+    .location-map {
+        height: 300px;
+        /* Fixed Height */
+        min-height: 300px;
+        flex: none;
+        width: 100%;
+    }
+
+    .location-info {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .loc-item {
+        margin-bottom: 25px;
+        text-align: center;
+        /* Center info on mobile */
+    }
+
+    /* 6. Floor Piping Overview (product_floor.html) Mobile Layout */
+    /* Target: Sections 1 & 3 (Image Left, Text Right in HTML) -> Reorder to Text Top, Image Bottom */
+    .zig-zag-row.left-img {
+        flex-direction: column-reverse !important;
+    }
+
+    /* Target: Section 2 (Text Left, Image Right in HTML) -> Keep Text Top, Image Bottom */
+    .zig-zag-row.right-img {
+        flex-direction: column !important;
+    }
+
+    .zig-zag-row {
+        gap: 30px;
+    }
+
+    .zz-img,
+    .zz-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        flex: none !important;
+    }
+
+    .zz-img {
+        margin-top: 20px !important;
+        /* Separate Image from Text */
+    }
+
+    .zz-img img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 7. Fire Stop Materials (product_fire.html) Feature List Mobile Layout */
+    .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* Increased from 15px for better separation */
+    }
+
+    .feature-block {
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 0;
+        /* Gap handled by margin/padding */
+        padding: 0 !important;
+        /* Remove container padding if needed, or keep for spacing? User wants "clean". Let's removing background/border from parent? User didn't say remove parent style, just "Remove Side Bar" from text container. */
+        /* Actually, existing .feature-block has background/shadow. Let's keep that but adjust internal layout. */
+        /* Wait, user said "Remove Side Bar... Remove any border-left property... currently displayed next to the text." */
+        /* Existing .feature-block has border-left. */
+        /* Clear parent container styles */
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        /* Maybe remove card style from parent? "Create Description Card... Box with Blue Border" */
+        box-shadow: none !important;
+    }
+
+    .feature-number {
+        grid-row: 1;
+        grid-column: 1;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        /* Space before Desc Box */
+    }
+
+    .feature-content {
+        display: contents;
+        /* Unbox the children */
+    }
+
+    .feature-content h4 {
+        grid-row: 1;
+        grid-column: 2;
+        margin: 0 0 10px 0 !important;
+        /* Align with number row, space before Desc Box */
+        font-size: 16px;
+        align-self: center;
+    }
+
+    .feature-content p {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        /* Full Width */
+        background: #fff;
+        border: 1px solid var(--secondary-blue);
+        border-radius: 8px;
+        padding: 15px;
+        width: 100%;
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+    }
 }

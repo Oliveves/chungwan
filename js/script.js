@@ -120,4 +120,67 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
         }
     }
+
+    // --- Mobile Side Drawer Toggle ---
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const closeDrawerBtn = document.getElementById('close-drawer');
+
+    if (hamburgerBtn && mobileDrawer && closeDrawerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            mobileDrawer.classList.add('active');
+        });
+
+        closeDrawerBtn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('active');
+        });
+
+        // Close on outside click (optional)
+        document.addEventListener('click', (e) => {
+            if (!mobileDrawer.contains(e.target) && !hamburgerBtn.contains(e.target) && mobileDrawer.classList.contains('active')) {
+                mobileDrawer.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Certificate Carousel (Mobile) ---
+    const mobileCertImg = document.getElementById('mobile-cert-img');
+    const mobileCertCount = document.getElementById('mobile-cert-count');
+    const prevBtn = document.getElementById('cert-prev');
+    const nextBtn = document.getElementById('cert-next');
+
+    if (mobileCertImg && prevBtn && nextBtn) {
+        // Generate Array of 18 images
+        const certImages = [];
+        for (let i = 1; i <= 18; i++) {
+            // Format number to 2 digits usually, but file names are i_cert01... i_cert18
+            const num = i < 10 ? '0' + i : i;
+            certImages.push(`images/i_cert${num}.gif`);
+        }
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            mobileCertImg.src = certImages[currentIndex];
+            if (mobileCertCount) {
+                mobileCertCount.innerText = `${currentIndex + 1} / ${certImages.length}`;
+            }
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = certImages.length - 1;
+            }
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            if (currentIndex >= certImages.length) {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+    }
 });

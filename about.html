@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)청완 - 회사소개</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oliveves.github.io/chungwan/">
+    <meta property="og:title" content="(주)청완 - 욕실배관자재 전문기업">
+    <meta property="og:description" content="욕실 배관 시스템의 기준. (주)청완 공식 홈페이지입니다.">
+    <meta property="og:image" content="https://oliveves.github.io/chungwan/images/og-thumb.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oliveves.github.io/chungwan/">
+    <meta name="twitter:title" content="(주)청완 - 욕실배관자재 전문기업">
+    <meta name="twitter:description" content="욕실 배관 시스템의 기준. (주)청완 공식 홈페이지입니다.">
+    <meta name="twitter:image" content="https://oliveves.github.io/chungwan/images/og-thumb.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +41,28 @@
                     <li><a href="support.html">고객센터</a></li>
                 </ul>
             </nav>
+            <!-- Hamburger Menu Icon (Mobile) -->
+            <div class="hamburger-menu" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Side Drawer Navigation -->
+    <nav id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">MENU</span>
+            <span class="close-drawer" id="close-drawer">&times;</span>
+        </div>
+        <ul class="drawer-list">
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="product_floor.html">층상배관</a></li>
+            <li><a href="product_fire.html">층간방화자재</a></li>
+            <li><a href="product_under.html">층하배관</a></li>
+            <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
+            <li><a href="support.html">고객센터</a></li>
+        </ul>
+    </nav>
 
     <!-- Sub-Visual Banner -->
     <section class="sub-visual">
@@ -51,12 +82,15 @@
     <!-- CEO Section -->
     <section id="ceo" class="section-v2">
         <div class="container">
+            <!-- Mobile Title (Visible only on Mobile) -->
+            <h3 class="mobile-ceo-title section-title-v2" style="display:none; text-align:center; margin-bottom:20px;">CEO 인사말</h3>
+            
             <div class="ceo-container">
                 <div class="ceo-photo">
                     <img src="images/ceo.jpg" alt="CEO Photo" onError="this.src='https://via.placeholder.com/400x500?text=CEO+Photo'">
                 </div>
                     <div class="ceo-text">
-                        <h3>CEO 인사말</h3>
+                        <h3 class="desktop-ceo-title">CEO 인사말</h3>
                         <p>저희 ㈜청완의 홈페이지를 방문해 주셔서 진심으로 환영합니다.</p>
                         <p>청완은 욕실배관자재 전문 생산업체로 지난 1993년 5월 설립한 이래 지속적인 기술개발로 기존 자재는 물론 층상이중배관 시스템을 비롯한 혁신적인 신공법을 고안해 여러분의 쾌적한 삶을 위해 끊임없는 노력을 기울이고 있습니다.</p>
                         <p>특히 2007년을 기점으로 ‘국토교통부 건설신기술(N.E.T) 제 623호’로 선정된 ‘층상이중배관시스템(Double Up System)’은 욕실 층간소음과 냄새로부터 소비자를 해방시켰습니다. LH공사, SH공사 등 공공아파트 뿐 아니라 삼성물산, GS건설, 현대건설, 현대산업개발, SK건설 등 국내 유수 건설사 아파트에 적용해 신공법으로 건설된 아파트만도 10만가구에 달합니다.</p>
@@ -75,6 +109,7 @@
 
     <!-- History Section -->
     <section id="history" class="section-v2 bg-light">
+        <!-- History content remains same, CSS will handle -->
         <div class="container">
             <h2 class="section-title-v2">HISTORY <span class="text-blue">회사연혁</span></h2>
             
@@ -129,6 +164,7 @@
         <div class="container">
             <h2 class="section-title-v2">CERTIFICATE <span class="text-blue">특허 및 인증</span></h2>
             
+            <!-- Desktop Grid (Hidden on Mobile) -->
             <div class="cert-grid-page">
                 <!-- 18 items, images only -->
                 <div class="cert-item"><img src="images/i_cert01.gif" alt="Cert 01"></div>
@@ -149,6 +185,16 @@
                 <div class="cert-item"><img src="images/i_cert16.gif" alt="Cert 16"></div>
                 <div class="cert-item"><img src="images/i_cert17.gif" alt="Cert 17"></div>
                 <div class="cert-item"><img src="images/i_cert18.gif" alt="Cert 18"></div>
+            </div>
+
+            <!-- Mobile Carousel (Visible only on Mobile) -->
+            <div class="mobile-cert-carousel" style="display:none;">
+                <button id="cert-prev" class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-img-wrapper">
+                    <img id="mobile-cert-img" src="images/i_cert01.gif" alt="Certificate" onError="this.src='https://via.placeholder.com/300x400?text=Cert'">
+                    <p id="mobile-cert-count" style="text-align:center; margin-top:10px; color:#666;">1 / 18</p>
+                </div>
+                <button id="cert-next" class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
             
             <p class="cert-scroll-hint" style="margin-top:20px;">* 이미지를 클릭하면 확대해서 보실 수 있습니다.</p>

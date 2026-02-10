@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(주)청완 - 고객센터</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oliveves.github.io/chungwan/">
+    <meta property="og:title" content="(주)청완 - 욕실배관자재 전문기업">
+    <meta property="og:description" content="욕실 배관 시스템의 기준. (주)청완 공식 홈페이지입니다.">
+    <meta property="og:image" content="https://oliveves.github.io/chungwan/images/og-thumb.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://oliveves.github.io/chungwan/">
+    <meta name="twitter:title" content="(주)청완 - 욕실배관자재 전문기업">
+    <meta name="twitter:description" content="욕실 배관 시스템의 기준. (주)청완 공식 홈페이지입니다.">
+    <meta name="twitter:image" content="https://oliveves.github.io/chungwan/images/og-thumb.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +41,28 @@
                     <li><a href="support.html" class="active">고객센터</a></li>
                 </ul>
             </nav>
+            <!-- Hamburger Menu Icon (Mobile) -->
+            <div class="hamburger-menu" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Side Drawer Navigation -->
+    <nav id="mobile-drawer" class="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">MENU</span>
+            <span class="close-drawer" id="close-drawer">&times;</span>
+        </div>
+        <ul class="drawer-list">
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="product_floor.html">층상배관</a></li>
+            <li><a href="product_fire.html">층간방화자재</a></li>
+            <li><a href="product_under.html">층하배관</a></li>
+            <li><a href="product_floor_wall.html">벽부형 층상배관</a></li>
+            <li><a href="support.html">고객센터</a></li>
+        </ul>
+    </nav>
 
     <!-- Sub-Visual Banner -->
     <section class="sub-visual">
@@ -199,6 +230,9 @@
         </div>
     </footer>
 
+    </footer>
+
+    <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
              // Tab Logic

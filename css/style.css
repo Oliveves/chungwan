@@ -2224,8 +2224,12 @@ ul {
         margin: 10px auto;
     }
 
-    .hero-sub {
-        font-size: 11px !important;
+    .hero-sub,
+    .hero-sub span,
+    .hero-sub p {
+        font-size: 12px !important;
+        /* Force exact size for all langs */
+        line-height: 1.4 !important;
         /* Further reduced subtext */
     }
 
